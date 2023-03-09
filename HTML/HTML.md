@@ -489,5 +489,37 @@ tr:last-child td {
 ```
    
    <h3><a id ="forms">Forms</a></h3>
-    
+   
+   The ```<form>``` is a HTML element that represents a document section containing interactive controls for submitting information.
+   It is possible to use the ```:valid``` and ```:invalid``` CSS pseudo-classes to style a ```<form>``` element based on whether the elements inside the form are valid.
+   
+   <img src="https://user-images.githubusercontent.com/91787553/224036525-01662c59-8b67-4a8e-8923-eb15f9218f12.png">
+   
+   ```css
+   <!-- Form which will send a GET request to the current URL -->
+<form method="get">
+  <label>Name:
+    <input name="submitted-name" autocomplete="name" />
+  </label>
+  <button>Save</button>
+</form>
+
+<!-- Form which will send a POST request to the current URL -->
+<form method="post">
+  <label>Name:
+    <input name="submitted-name" autocomplete="name" />
+  </label>
+  <button>Save</button>
+</form>
+
+<!-- Form with fieldset, legend, and label -->
+<form method="post">
+  <fieldset>
+    <legend>Do you agree to the terms?</legend>
+    <label><input type="radio" name="radio" value="yes" /> Yes</label>
+    <label><input type="radio" name="radio" value="no" /> No</label>
+  </fieldset>
+</form>
+```
+
   <h2><a id="project">Sample Project</a></h2>
