@@ -15,12 +15,14 @@
     <li><a href ="#html">HTML tag</a></li>
     <li><a href="#head">Head tag</a></li>
     <li><a href ="#meta">Meta tag</a></li>
+    <li><a href ="#body">Body tag</a></li>
     <li><a href ="#para">Paragraph tag</a></li>
     <li><a href ="#heading">h tag</a></li>
     <li><a href ="#strongemstrike">Bold Italics and Underline</a></li>
     <li><a href ="#font">Font</a></li>
+    <li><a href ="#list">List</a></li>
     <li><a href ="#image">Image</a></li>
-    <li><a href ="#links">Links in html</a></li>
+    <li><a href ="#anchor">Anchor tag</a></li>
     <li><a href ="#table">Tables</a></li>
     <li><a href ="#forms">Forms</a></li>
   </ul>
@@ -157,21 +159,335 @@
    - ```refresh``` This instruction specifies:
       - The number of seconds until the page should be reloaded - only if the content attribute contains a non-negative integer.
       - The number of seconds until the page should redirect to another - only if the content attribute contains a non-negative integer followed by the string ';url=', and a valid URL.
+   <strong>name</strong>
+   The ```name``` and ```content``` attributes can be used together to provide document metadata in terms of name-value pairs, with the name attribute giving the metadata 
+    ```name``` and the ```content``` attribute giving the value.
+
+   ```html
+   <meta charset="utf-8" />
+
+   <!-- Redirect page after 3 seconds -->
+   <meta http-equiv="refresh" content="3;url=https://www.mozilla.org" />
+   ```
+  
+   <h3><a id="body">Body Tag</a></h3>
+  
+   The ```<body>``` HTML element represents the content of an HTML document. There can be only one ```<body>``` element in a document.
+   The start tag may be omitted if the first thing inside it is not a space character, comment, ```<script>``` element or ```<style>``` element. The end tag may be        omitted if the ```<body>``` element has contents or has a start tag, and is not immediately followed by a comment.
+  
+  <strong><u>Some Attributes of the Body tag</u></strong>
+  
+  <img src="https://user-images.githubusercontent.com/91787553/223964573-6a34dab8-7822-4dea-8427-aac3405fec21.png" width="700" height="500">
+
     
    <h3><a id ="para">Paragraph tag</a></h3>
+  
+   The ```<p>``` HTML element represents a paragraph. Paragraphs are usually represented in visual media as blocks of text separated from adjacent blocks by blank        lines and/or first-line indentation, but HTML paragraphs can be any structural grouping of related content, such as images or form fields.
+
+   Paragraphs are block-level elements, and notably will automatically close if another block-level element is parsed before the closing ```</p>``` tag.
+   The start tag is required. The end tag may be omitted if the ```<p>``` element is immediately followed by an ```<address>``` ```<article>``` ```<aside>``` ```<blockquote>``` ```<div>``` ```<dl>``` ```<fieldset>``` ```<footer>``` ```<form>``` ```<h1>``` ```<h2>``` ```<h3>``` ```<h4>``` ```<h5>``` ```<h6>``` ```<header>``` ```<hr>``` ```<menu>``` ```<nav>``` ```<ol>``` ```<pre>``` ```<section>``` ```<table>``` ```<ul>``` or another ```<p>``` element, or if there is no more content in the parent element and the parent element is not an ```<a>``` element.
+   
+   <strong><u>Note:</u></strong>  The ```align``` attribute on ```<p>``` tags is obsolete and shouldn't be used.
+   
+   ```html
+   <p>
+    This is the first paragraph of text. This is the first paragraph of text. This
+    is the first paragraph of text. This is the first paragraph of text.
+  </p>
+  <p>
+    This is the second paragraph. This is the second paragraph. This is the second
+    paragraph. This is the second paragraph.
+  </p>
+  ```
     
    <h3><a id ="heading">h tag</a></h3>
+   
+   The ```<h1>``` to ```<h6>``` HTML elements represent six levels of section headings. ```<h1>``` is the highest section level and ```<h6>``` is the lowest.
+   
+   ```html
+   <h1>Heading level 1</h1>
+   <h2>Heading level 2</h2>
+   <h3>Heading level 3</h3>
+   <h4>Heading level 4</h4>
+   <h5>Heading level 5</h5>
+   <h6>Heading level 6</h6>
+   ```
     
    <h3><a id ="strongemstrike">Bold Italics and Underline</a></h3>
+   
+   The ```<strong>``` element is for content that is of "strong importance," including things of great seriousness or urgency (such as warnings). This could be a sentence that is of great importance to the whole page, or you could merely try to point out that some words are of greater importance compared to nearby content.
+
+  Typically this element is rendered by default using a bold font weight. However, it should not be used to apply bold styling; use the CSS font-weight property for that purpose. Use the ```<b>``` element to draw attention to certain text without indicating a higher level of importance. Use the ```<em>``` element to mark text that has stress emphasis.
+
+  Another accepted use for ```<strong>``` is to denote the labels of paragraphs which represent notes or warnings within the text of a page.
+  
+   ### ```<b>``` vs. ```<strong>``` 
+   
+   It is often confusing to new developers why there are so many ways to express the same thing on a rendered website. ```<b>``` and ```<strong>``` are perhaps one of the most common sources of confusion, causing developers to ask "Should I use ```<b>``` or ```<strong>```? Don't they both do the same thing?"
+
+   Not exactly. The ```<strong>``` element is for content that is of greater importance, while the ```<b>``` element is used to draw attention to text without indicating that it's more important.
+
+   It may help to realize that both are valid and semantic elements in HTML and that it's a coincidence that they both have the same default styling (boldface) in most browsers (although some older browsers actually underline ```<strong>```). Each element is meant to be used in certain types of scenarios, and if you want to bold text for decoration, you should instead actually use the CSS font-weight property.
+   
+   ### ```<em>``` vs. ```<strong>```
+   
+   Adding to the confusion is the fact that while HTML 4 defined ```<strong>``` as indicating a stronger emphasis, HTML 5 defines ```<strong>``` as representing "strong importance for its contents." This is an important distinction to make.
+
+   While ```<em>``` is used to change the meaning of a sentence as spoken emphasis does ("I love carrots" vs. "I love carrots"), ```<strong>``` is used to give portions of a sentence added importance (e.g., "Warning! This is very dangerous.") Both ```<strong>``` and ```<em>``` can be nested to increase the relative degree of importance or stress emphasis, respectively.
+   
+   ```html
+   <p>
+     <strong>Important:</strong> Before proceeding, make sure you add plenty of butter.
+     In HTML 5, what was previously called
+     <em>block-level</em> content is now called <em>flow</em> content.
+  </p>
+  ```
     
    <h3><a id ="font">Font</a></h3>
-    
+   
+   Font Tag in HTML is one of the most important attributes used to make webpage or HTML documents more attractive. It has the properties to change the size, color, and style of included text. With the help of a font tag, one can make a web page’s size, color, and face in the same text format. This tag mainly works on three major attributes like size, Face or Type and color. Font tag works as an inline element in HTML to change some features of block text in HTML documents. The text enclosed within ```<font>``` tag is used to define style to the text included in it.
+   
+   <img src="https://user-images.githubusercontent.com/91787553/223972638-89ef0c06-93c9-4940-85b4-98a1b0d68115.png">
+   
+   ```html
+   <body>
+   <p> <font size="2" color="blue" face="Calibri"> </font>
+   </p>
+   </body>
+   ```
+   
+   <h3><a id ="list">List</a></h3>
+   
+   The ```<li>``` HTML element is used to represent an item in a list. It must be contained in a parent element: an ordered list (```<ol>```), an unordered list (```<ul>```), or a menu (```<menu>```). In menus and unordered lists, list items are usually displayed using bullet points. In ordered lists, they are usually displayed with an ascending counter on the left, such as a number or letter.
+   
+   ```html
+   <ol>
+     <li>first item</li>
+     <li>second item</li>
+     <li>third item</li>
+   </ol>
+   
+   <ol type="I">
+     <li value="3">third item</li>
+     <li>fourth item</li>
+     <li>fifth item</li>
+   </ol>
+
+   <ul>
+     <li>first item</li>
+     <li>second item</li>
+     <li>third item</li>
+   </ul>
+   ```
+   
    <h3><a id ="image">Image</a></h3>
+   
+   The ```src``` attribute is required, and contains the path to the image you want to embed.
+   
+   The ```alt``` attribute holds a text description of the image, which isn't mandatory but is incredibly useful for accessibility — screen readers read this description out to their users so they know what the image means. Alt text is also displayed on the page if the image can't be loaded for some reason: for example, network errors, content blocking, or linkrot.
+   
+   <img src = "https://user-images.githubusercontent.com/91787553/223975342-47d45713-9342-4c3c-a736-c67fc1e6bc55.png">
+   
+   ### Attributes of img tag:
+   
+   <img src = "https://user-images.githubusercontent.com/91787553/223976155-cb91ef3c-5f55-40de-bb36-48f4aabeb0c3.png" width = "75%">
+   
+   ```html
+   <img src="https://user-images.githubusercontent.com/91787553/223976640-df14bef5-77d6-4ffe-9f8c-ba1093a4d348.png"
+   alt = "Image tag"
+   width = "50%"
+   height = "45%"
+   srcset="https://user-images.githubusercontent.com/91787553/223976640-df14bef5-77d6-4ffe-9f8c-ba1093a4d348.png 2x">
+   ```
     
-   <h3><a id ="links">Links in html</a></h3>
-    
+   <h3><a id ="anchor">Anchor tag</a></h3>
+   
+   The ```<a>``` HTML element (or anchor element), with its href attribute, creates a hyperlink to web pages, files, email addresses, locations in the same page, or anything else a URL can address.
+
+   Content within each ```<a>``` should indicate the link's destination. If the href attribute is present, pressing the enter key while focused on the ```<a>``` element will activate it.
+   
+   <img src="https://user-images.githubusercontent.com/91787553/223979481-7ebc94b0-6050-4dc1-ab58-f4a4c273709f.png">
+   
+   ```html
+   <a href="https://user-images.githubusercontent.com/91787553/223979814-92b3ceec-bd6e-4e8a-bd36-5759337164d7.png">Attributes of anchor tag</a>
+   ```
+
    <h3><a id ="table">Tables</a></h3>
-    
+   
+   The ```<table>``` HTML element represents tabular data — that is, information presented in a two-dimensional table comprised of rows and columns of cells containing data.
+   
+   <img src = "https://user-images.githubusercontent.com/91787553/223990214-ce7d9902-e361-4e50-87ee-a2fd73231853.png">
+   
+   ```html
+   <p>Simple table with header</p>
+<table>
+  <tr>
+    <th>First name</th>
+    <th>Last name</th>
+  </tr>
+  <tr>
+    <td>John</td>
+    <td>Doe</td>
+  </tr>
+  <tr>
+    <td>Jane</td>
+    <td>Doe</td>
+  </tr>
+</table>
+
+<p>Table with thead, tfoot, and tbody</p>
+<table>
+  <thead>
+    <tr>
+      <th>Header content 1</th>
+      <th>Header content 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Body content 1</td>
+      <td>Body content 2</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>Footer content 1</td>
+      <td>Footer content 2</td>
+    </tr>
+  </tfoot>
+</table>
+
+<p>Table with colgroup</p>
+<table>
+  <colgroup span="4"></colgroup>
+  <tr>
+    <th>Countries</th>
+    <th>Capitals</th>
+    <th>Population</th>
+    <th>Language</th>
+  </tr>
+  <tr>
+    <td>USA</td>
+    <td>Washington, D.C.</td>
+    <td>309 million</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td>Sweden</td>
+    <td>Stockholm</td>
+    <td>9 million</td>
+    <td>Swedish</td>
+  </tr>
+</table>
+
+<p>Table with colgroup and col</p>
+<table>
+  <colgroup>
+    <col style="background-color: #0f0" />
+    <col span="2" />
+  </colgroup>
+  <tr>
+    <th>Lime</th>
+    <th>Lemon</th>
+    <th>Orange</th>
+  </tr>
+  <tr>
+    <td>Green</td>
+    <td>Yellow</td>
+    <td>Orange</td>
+  </tr>
+</table>
+
+<p>Simple table with caption</p>
+<table>
+  <caption>
+    Awesome caption
+  </caption>
+  <tr>
+    <td>Awesome data</td>
+  </tr>
+</table>
+   ```
+   
+   ### Sorting Tables:
+   
+   There are no native methods for sorting the rows (```<tr>``` elements) of an HTML table. But using ```Array.prototype.slice()``` ```Array.prototype.sort()``` ```Node.removeChild()``` and ```Node.appendChild()``` you can implement your own ```sort()``` function to sort an HTMLCollection of ```<tr>``` elements.
+   
+   ```html
+   <table>
+  <tbody>
+    <tr>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+```
+```javascript
+HTMLTableSectionElement.prototype.sort = function (cb) {
+  Array.from(this.rows)
+    .sort(cb)
+    .forEach((e) => this.appendChild(this.removeChild(e)));
+};
+
+document
+  .querySelector("table")
+  .tBodies[0].sort((a, b) => a.textContent.localeCompare(b.textContent));
+```
+   ### Displaying large tables in small spaces
+   
+   A common issue with tables on the web is that they don't natively work very well on small screens when the amount of content is large, and the way to make them scrollable isn't obvious, especially when the markup may come from a CMS and cannot be modified to have a wrapper.
+   
+   ```css
+   table,
+th,
+td {
+  border: 1px solid;
+}
+
+table {
+  width: 100%;
+  max-width: 400px;
+  height: 240px;
+  margin: 0 auto;
+  display: block;
+  overflow-x: auto;
+  border-spacing: 0;
+}
+
+tbody {
+  white-space: nowrap;
+}
+
+th,
+td {
+  padding: 5px 10px;
+  border-top-width: 0;
+  border-left-width: 0;
+}
+
+th {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  vertical-align: bottom;
+}
+
+th:last-child,
+td:last-child {
+  border-right-width: 0;
+}
+
+tr:last-child td {
+  border-bottom-width: 0;
+}
+```
+   
    <h3><a id ="forms">Forms</a></h3>
     
   <h2><a id="project">Sample Project</a></h2>
