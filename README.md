@@ -1,1 +1,1 @@
-# The-Chronicles-of-Techkky
+The-Chronicles-of-Techkky
