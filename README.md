@@ -1,1 +1,1 @@
-<div align="center">The-Chronicles-of-Techkky</div>
+<div align="center">The Chronicles of Techkky</div>
